@@ -1,12 +1,7 @@
-import Movies from "./components/Movies";
+import Home from './pages/Home';
 
 function App() {
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold p-6">Películas del MCU</h1>
-      <Movies />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;

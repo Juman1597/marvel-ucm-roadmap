@@ -1,75 +1,45 @@
-import { ucmContent } from "../data/ucm-mocker.js";
-import { useMemo } from "react";
+import Node from "./Node";
 
-export default function Timeline() {
-  // Funcion ordenar por fecha de lanzamiento
-  const sortedContent = useMemo(() => {
-    return [...ucmContent].sort(
-      (a, b) => new Date(a.releaseDate) - new Date(b.releaseDate)
-    );
-  }, []);
+import {
+  getPhasesMCU,
+  getAllEntriesByPhase,
+  groupEntriesByYear,
+} from "../utils/utilsFunctions";
+import { useDragScroll } from "../hooks/useDragScroll";
+
+const Timeline = () => {
+  const phases = getPhasesMCU(); // Obtenemos las fases del MCU
+  const entries = getAllEntriesByPhase(phases);
+  const entriesByYear = groupEntriesByYear(entries);
+
+  const { scrollRef, eventHandlers } = useDragScroll();
 
   return (
-    <div className="p-4 space-y-4">
-      <h1 className="text-2xl font-bold mb-4">
-        Marvel Cinematic Universe Timeline
-      </h1>
-      <div className="flex flex-col gap-6">
-        {sortedContent.map((item) => (
-          <div
-            key={`${item.id}-${item.season || 0}`}
-            class="flex flex-col md:flex-row items-start gap-4 bg-white shadow rounded-2xl p-4 border-l-4"
-            style={{ borderColor: getBorderColor(item.type) }}
-          >
-            <img
-              src={item.poster}
-              alt={item.title}
-              className="w-24 h-36 object-cover rounded-xl shadow"
-            />
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold">
-                {item.title}{" "}
-                {item.season && (
-                  <span className="text-sm">(Season {item.season})</span>
-                )}
-              </h2>
-              <p className="text-sm text-gray-500">
-                {formatDate(item.releaseDate)}
-              </p>
-              <p className="mt-2 text-sm">
-                Type:{" "}
-                <span className="capitalize font-medium">{item.type}</span>
-              </p>
-              {item.episodes && (
-                <p className="text-sm text-gray-600">
-                  Episodes: {item.episodes.length}
-                </p>
-              )}
+    <div className="min-h-screen w-full bg-gray-900 flex flex-col">
+      <div
+        ref={scrollRef}
+        className="w-full h-screen overflow-auto cursor-grab"
+        style={{ touchAction: "grab" }}
+        {...eventHandlers}
+      >
+        {/* Timeline con scroll horizontal */}
+        <div className="flex gap-32 py-8 px-6 min-w-full">
+          {Object.entries(entriesByYear).map(([year, entries]) => (
+            <div key={year} className="flex flex-col items-center">
+              <div className="text-white mb-4 font-bold text-center w-32">
+                {year}
+              </div>
+              <div className="flex flex-col items-center gap-8">
+                {entries.map((entry) => (
+                  <Node key={entry.id} data={entry} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
-}
+};
 
-function getBorderColor(type) {
-  switch (type) {
-    case "movie":
-      return "#e11d48"; // Rojo
-    case "serie":
-      return "#2563eb"; // Azul
-    case "animated":
-      return "#10b981"; // Verde
-    default:
-      return "#6b7280"; // Gris
-  }
-}
-
-function formatDate(dateString) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+export default Timeline;

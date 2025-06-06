@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "title": "X-Men '97",
+    "release_date": "2024-03-20",
+    "last_aired_date": "2024-05-15",
+    "season": 1,
+    "number_episodes": 10,
+    "overview": "X-Men '97 continues the story of X-Men (1992). In both series, mutants are individuals born with superhuman abilities that typically manifest during puberty. The X-Men are a team of mutant superheroes founded by Professor Charles Xavier to protect both mutants and humans. At the end of The Animated Series, Xavier nearly dies in an assassination attempt and is taken into space to be healed by the alien Shi'ar Empire. X-Men '97 begins a year later and sees the X-Men facing new challenges without Xavier, under the leadership of their former adversary, Magneto. Like the original series, X-Men '97 combines action, soap opera-style drama, and the exploration of serious topics.",
+    "cover_url": "",
+    "trailer_url": "https://www.youtube.com/watch?v=pv3Ss8o9gGQ",
+    "directed_by": "Jake Castorena",
+    "phase": null,
+    "saga": null,
+    "type": "animated",
+    "watched": false,
+    "episodes": [
+      {
+        "number": 1,
+        "title": "To Me, My X-Men"
+      },
+      {
+        "number": 2,
+        "title": "Mutant Liberation Begins"
+      },
+      {
+        "number": 3,
+        "title": "Fire Made Flesh"
+      },
+      {
+        "number": 4,
+        "title": "Motendo / Lifedeath - Part 1"
+      },
+      {
+        "number": 5,
+        "title": "Remember It"
+      },
+      {
+        "number": 6,
+        "title": "Lifedeath - Part 2"
+      },
+      {
+        "number": 7,
+        "title": "Bright Eyes"
+      },
+      {
+        "number": 8,
+        "title": "Tolerance is Extinction - Part 1"
+      },
+      {
+        "number": 9,
+        "title": "Tolerance is Extinction - Part 2"
+      },
+      {
+        "number": 10,
+        "title": "Tolerance is Extinction - Part 3"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Marvel Zombies",
+    "release_date": "2025-10-03",
+    "last_aired_date": null,
+    "season": 1,
+    "number_episodes": 4,
+    "overview": "Re-imagines the marvel universe as a new generation of heroes battle against an ever-spreading zombie scourge.",
+    "cover_url": "",
+    "trailer_url": null,
+    "directed_by": "Bryan Andrews",
+    "phase": null,
+    "saga": null,
+    "type": "animated",
+    "watched": false,
+    "episodes": [
+      {
+        "number": 1,
+        "title": "TBA"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Your Friendly Neighborhood Spider-Man",
+    "release_date": "2025-01-29",
+    "last_aired_date": "2025-02-19",
+    "season": 1,
+    "number_episodes": 10,
+    "overview": "The animated series follows Peter Parker on his way to becoming Spider-Man in the MCU, with a journey unlike we've ever seen and a style that celebrates the character's early comic book roots.",
+    "cover_url": "",
+    "trailer_url": "https://www.youtube.com/watch?v=N3J2JRQg040",
+    "directed_by": "Jeff Trammell",
+    "phase": null,
+    "saga": null,
+    "type": "animated",
+    "watched": false,
+    "episodes": [
+      {
+        "number": 1,
+        "title": "Amazing Fantasy"
+      },
+      {
+        "number": 2,
+        "title": "The Parker Luck"
+      },
+      {
+        "number": 3,
+        "title": "Secret Identity Crisis"
+      },
+      {
+        "number": 4,
+        "title": "Hitting the Big Time"
+      },
+      {
+        "number": 5,
+        "title": "The Unicorn Unleashed"
+      },
+      {
+        "number": 6,
+        "title": "Duel with the Devil"
+      },
+      {
+        "number": 7,
+        "title": "Scorpion Rising"
+      },
+      {
+        "number": 8,
+        "title": "Tangled Web"
+      },
+      {
+        "number": 9,
+        "title": "Hero or Menace"
+      },
+      {
+        "number": 10,
+        "title": "If This Be My Destiny..."
+      }
+    ]
+  }
+]
