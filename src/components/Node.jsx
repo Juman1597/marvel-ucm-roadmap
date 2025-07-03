@@ -1,28 +1,43 @@
 import clsx from "clsx";
+import { getIconByTitle, getColorByTitle } from "../mappers/timeline-mapper";
+import { isAvengersTitle, isFinalAvengersTitle, getSizeClass } from "../utils/utilsFunctions";  
 
 const Node = ({ data }) => {
-  if (!data?.title) return null; // Evita renderizar si no hay título
+  if (!data?.title) return null;
 
-  const isAvengers = data.title.includes("Avengers"); // Comprobamos si la pelicula es de Avengers
-  const sizeClass = isAvengers ? "w-24 h-24 text-sm" : "w-16 h-16 text-xs"; // Definimos el tamaño del nodo
+  const isAvengers = isAvengersTitle(data.title);
+  const finalAvengers = isFinalAvengersTitle(data.title);
+  const sizeClass = getSizeClass(data.type, isAvengers, finalAvengers);
+  const imageUrl = getIconByTitle (data.title);
+  const borderColorClass = getColorByTitle(data.title);
 
   return (
-    <div className="flex flex-col items-center space-y-2">
+    <div className="flex flex-col items-center space-y-6">
+      {/* Wrapper con circunferencia */}
+      <div className={clsx(
+        "rounded-full ring-4 ring-offset-8 ring-offset-[#101828]",
+        borderColorClass
+      )}
+    >
       {/* Nodo circular */}
       <div
         className={clsx(
-          `rounded-full bg-red-600 flex items-center justify-center ${sizeClass}`
+          `rounded-full bg-black flex items-center justify-center ${sizeClass}`
         )}
       >
-        {/* TODO: Más adelante añadiremos el icono */}
+        <img
+          src={imageUrl}
+          alt="{data.title}"
+          className="w-full h-full object-contain rounded-full"
+        />
       </div>
+            </div>
       {/* Título de la entrada */}
-      <div className="max-w-xs bg-gray-800 text-white rounded-lg p-2">
-        <p className="text-sm break-words text-center">{data.title}</p>
+      <div className="min-w-[12rem] max-w-xs bg-gray-800 text-white rounded-lg p-2">
+        <p className="text-2xl break-words text-center anton-regular">{data.title}</p>
       </div>
     </div>
   );
 };
 
 export default Node;
-// Nota: Asegúrate de que la prop "movie" tenga una propiedad "title" que sea una cadena de texto.

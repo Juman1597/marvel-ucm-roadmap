@@ -702,7 +702,7 @@
     "cover_url": "https://res.cloudinary.com/augustomarcelo/image/upload/v1737321307/mcuapi/gallery/tv_shows/wonder_man/season_1/posters/1.jpg",
     "trailer_url": null,
     "directed_by": null,
-    "phase": null,
+    "phase": 6,
     "saga": null,
     "type": "serie",
     "watched": false,

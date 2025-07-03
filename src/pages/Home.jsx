@@ -1,6 +1,5 @@
-// src/pages/Home.jsx
-import React from "react";
-import Timeline from "../components/Timeline";
+
+import Timeline from "../components/Timeline/Timeline";
 
 const Home = () => {
   return (
